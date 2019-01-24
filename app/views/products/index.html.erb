@@ -10,15 +10,15 @@
 $(function () {
   $(".js-more").on('click', function() {
     // get the id from the data attribute
-    let id = $(this).data("id");
+    var id = $(this).data("id");
     $.get("/products/" + id + "/description", function(data) {
-      $(`#desc${id}`).text(data);
+      $("#desc" + id).text(data);
     });
     $.get("products/" + id + "/inventory", function(data){
       if (data === "true"){
-        $(`#inv${id}`).text("Available");
+        $("#inv" + id).text("Available");
       } else {
-        $(`#inv${id}`).text("Sold Out");
+        $("#inv" + id).text("Sold Out");
       }
     })
   });
