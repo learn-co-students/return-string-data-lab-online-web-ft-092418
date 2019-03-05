@@ -4,4 +4,6 @@ class InvoicesController < ApplicationController
     @invoices = Invoice.all
   end
 
+
 end
+
